@@ -11,7 +11,7 @@ const Bird = () => {
    scale={[0.003, 0.003, 0.003]}
    >
     
-    <primitive object={scene} />
+    <primitive object={scene}  />
    </mesh>
    
   )
