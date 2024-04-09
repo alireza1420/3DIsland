@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import birdScene from '../assets/3d/bird.glb'
+import birdScene from '../assets/3d/bird.glb';
 import { useGLTF } from '@react-three/drei';
 
 const Bird = () => {

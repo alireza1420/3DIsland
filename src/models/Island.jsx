@@ -5,7 +5,7 @@ import { events, useFrame, useThree } from '@react-three/fiber';
 import {a} from '@react-spring/three';
 
 import islandScene from '../assets/3d/island.glb';
-const Island = ({isRotating, setIsRotating, ...props})=> {
+const Island = ({isRotating, setIsRotating,setCurrentStage, ...props})=> {
     const islandRef=useRef()
   const  { nodes, materials } = useGLTF(islandScene);
   const {gl, viewport} = useThree();
@@ -15,32 +15,32 @@ const Island = ({isRotating, setIsRotating, ...props})=> {
   const dampingFactor = 0.95;
 
   // Handle pointer (mouse or touch) down event
-  const handlePointerDown = (event) => {
-    event.stopPropagation();
-    event.preventDefault();
+  const handlePointerDown = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     setIsRotating(true);
 
     // Calculate the clientX based on whether it's a touch event or a mouse event
-    const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
 
     // Store the current clientX position for reference
     lastX.current = clientX;
   };
 
   // Handle pointer (mouse or touch) up event
-  const handlePointerUp = (event) => {
-    event.stopPropagation();
-    event.preventDefault();
+  const handlePointerUp = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     setIsRotating(false);
   };
 
   // Handle pointer (mouse or touch) move event
-  const handlePointerMove = (event) => {
-    event.stopPropagation();
-    event.preventDefault();
+  const handlePointerMove = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     if (isRotating) {
       // If rotation is enabled, calculate the change in clientX position
-      const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
 
       // calculate the change in the horizontal position of the mouse cursor or touch input,
       // relative to the viewport's width
@@ -108,8 +108,7 @@ const Island = ({isRotating, setIsRotating, ...props})=> {
       rotationSpeed.current = delta * 0.01 * Math.PI;
     }
   }
-
-  useEffect(() => {
+ useEffect(() => {
     // Add event listeners for pointer and keyboard events
     const canvas = gl.domElement;
     canvas.addEventListener("pointerdown", handlePointerDown);
