@@ -60,8 +60,12 @@ const Home = () => {
         <Canvas className ={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}
         camera={{near:0.1, far:1000}}
         >
-          <Bird />
-           <Sky/>
+          <Bird 
+        
+          />
+           <Sky
+           isRotating={isRotating}
+           />
           <Suspense fallback={<Loader />}>
             <directionalLight
             position={[1,5,1]}
