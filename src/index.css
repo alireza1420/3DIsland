@@ -20,6 +20,9 @@ body:has(.card[data-color="blue"]:hover) {
 body:has(.card[data-color="green"]:hover) {
   background-color: rgb(var(--green-rgb) / 25%);
 }
+label{
+  font-size: 1.2rem;
+}
 
 @layer utilities {
   .max-container {
@@ -180,4 +183,33 @@ body:has(.card[data-color="green"]:hover) {
   border: #fff;
   box-shadow: 0.6vmin 0.6vmin #fff, 1vmin 1vmin #d2e4ff, 1vmin 1vmin #d2e4ff,
     0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
+}
+
+
+.flag {
+  background-color: #006AA7;
+  width: 500px;
+  height: 300px;
+  position: relative;
+}
+
+.flag::before {
+  background-color: #FECC00;
+  content: "";
+  height: 15%;
+  left: 0;
+  margin-top: -5%;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+.flag::after {
+  background-color: #FECC00;
+  content: "";
+  height: 100%;
+  left: 30%;
+  margin-left: -5%;
+  position: absolute;
+  top: 0;
+  width: 9%;
 }
