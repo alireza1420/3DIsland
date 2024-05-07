@@ -1,13 +1,20 @@
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser'
+import React, { Suspense, useRef, useState } from 'react';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser'
+import { Loader } from '@react-three/drei';
+import Fox from '../components/Fox';
+import { Canvas } from "@react-three/fiber";
+import useAlert from '../hooks/useAlert';
+import Alert from '../components/Alert';
 
 
- 
+
 
 
 const Contact = () => {
 const [form, setForm] = useState({name:'', email:'', message:''})
-const [isLoading, setIsLoading] = useState(false);
+const [isLoading, setIsLoading] = useState('false');
+const [currentAnimation,setCurrentAnimation] = useState('idle');
+const {alert, showAlert, hideAlert}= useAlert();
 const formRef=useRef(null);
 
   const handelChange=(e)=>{
@@ -16,9 +23,10 @@ const formRef=useRef(null);
 
   const handleSubmit=()=>{
     e.preventDefault();
+  console.log(EmailJSResponseStatus);
     setIsLoading(true);
-//service_e3pxrjv
-//tid: template_i1cs8qx
+    setCurrentAnimation('hit');
+
     emailjs.send(import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
       import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
  {
@@ -30,30 +38,29 @@ const formRef=useRef(null);
  import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       ).then(()=>{
         setIsLoading(false);
-        //TODO: SHOW sucess message
-        //TODO: HIDE sucess message
-
+          showAlert({show: true, text: 'Message sent Successfully!', type: 'success'})
+          setTimeout(() => {
+            hideAlert();
+            setCurrentAnimation('idle')
+          }, [3000]);
         setForm=({name:'', email:'', message:''});
 
           }    ).catch((error)=>{
-            console.log("error")
-                    //TODO: SHOW errzADS message
-
+            showAlert({show: true, text: 'I didnt Recive your message!', type: 'danger'})
+            setIsLoading(false);
+            setCurrentAnimation('idle');
           })
   }
 
-  const handelBlur= (e)=>{ 
- 
-  }
+  const handelBlur= (e)=>setCurrentAnimation('walk');
 
-  const handleFocus=()=>{
-
-  }
+  const handleFocus=()=>setCurrentAnimation('idle');
 
 
   
   return (
 <section className='relative flex lg:flex-row flex-col max-container'>
+
   <div className='flex-1 min-w-[50%] flex flex-col'> 
     <h1 className='head-text'>
     Get in touch
@@ -71,8 +78,8 @@ const formRef=useRef(null);
 
 <label className='font-semibold' >
   Email
-  <input type="text" name='email' className='input'
- placeholder='Let me know how I can help you!' required value={form.message}
+  <input type="email" name='email' className='input'
+ placeholder='Let me know how I can help you!' required value={form.email}
   onChange={handelChange}
   onFocus={handleFocus}
   onBlur={handelBlur} />
@@ -81,7 +88,7 @@ const formRef=useRef(null);
 
 <label className='font-semibold' >
   Your Message
-  <input type="textarea" name='message' rows={4} className='input'
+  <textarea type="textarea" name='message' rows={4} className='input'
  placeholder='Johnwick@gmail.com' required value={form.message}
   onChange={handelChange}
   onFocus={handleFocus}
@@ -98,6 +105,36 @@ const formRef=useRef(null);
 </form>
 
   </div>
+
+  <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
+        <Canvas
+          camera={{
+            position: [0, 0, 5],
+            fov: 75,
+            near: 0.1,
+            far: 1000,
+          }}
+        >
+          <directionalLight position={[0, 0, 1]} intensity={2.5} />
+          <ambientLight intensity={1} />
+          <pointLight position={[5, 10, 0]} intensity={2} />
+          <spotLight
+            position={[10, 10, 10]}
+            angle={0.15}
+            penumbra={1}
+            intensity={2}
+          />
+
+          <Suspense fallback={<Loader />}>
+            <Fox
+              currentAnimation={currentAnimation}
+              position={[0.7, 0.35, 0]}
+              rotation={[12.629, -0.6, 0]}
+              scale={[0.5, 0.5, 0.5]}
+            />
+          </Suspense>
+        </Canvas>
+      </div>
 </section> 
 
 )
