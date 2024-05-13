@@ -1,20 +1,15 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
+import {  Solaredition, Windedition } from "../assets/images";
 import {
     car,
     contact,
     css,
     estate,
-    express,
     git,
     github,
     html,
     javascript,
     linkedin,
     mongodb,
-    motion,
-    mui,
-    nextjs,
-    nodejs,
     pricewise,
     react,
     redux,
@@ -23,18 +18,39 @@ import {
     summiz,
     tailwindcss,
     threads,
-    typescript
+    php,
+    laravel,
+    dotnet,
+    mysql,
+    threejs,
+   
 } from "../assets/icons";
 
 export const skills = [
+    {
+        imageUrl: html,
+        name: "HTML",
+        type: "Frontend",
+    },
     {
         imageUrl: css,
         name: "CSS",
         type: "Frontend",
     },
+
     {
-        imageUrl: express,
-        name: "Express",
+        imageUrl: php,
+        name: "PHP",
+        type: "Backend",
+    },
+    {
+        imageUrl: laravel,
+        name: "Laravel",
+        type: "Backend",
+    },
+    {
+        imageUrl: dotnet,
+        name: "dotnet",
         type: "Backend",
     },
     {
@@ -47,40 +63,16 @@ export const skills = [
         name: "GitHub",
         type: "Version Control",
     },
-    {
-        imageUrl: html,
-        name: "HTML",
-        type: "Frontend",
-    },
+  
     {
         imageUrl: javascript,
         name: "JavaScript",
         type: "Frontend",
     },
     {
-        imageUrl: mongodb,
-        name: "MongoDB",
-        type: "Database",
-    },
-    {
-        imageUrl: motion,
-        name: "Motion",
-        type: "Animation",
-    },
-    {
-        imageUrl: mui,
-        name: "Material-UI",
+        imageUrl: threejs,
+        name: "threejs",
         type: "Frontend",
-    },
-    {
-        imageUrl: nextjs,
-        name: "Next.js",
-        type: "Frontend",
-    },
-    {
-        imageUrl: nodejs,
-        name: "Node.js",
-        type: "Backend",
     },
     {
         imageUrl: react,
@@ -93,6 +85,18 @@ export const skills = [
         type: "State Management",
     },
     {
+        imageUrl: mongodb,
+        name: "MongoDB",
+        type: "Database",
+    },
+
+    {
+        imageUrl: mysql,
+        name: "mysql",
+        type: "Database",
+    },
+  
+    {
         imageUrl: sass,
         name: "Sass",
         type: "Frontend",
@@ -102,66 +106,40 @@ export const skills = [
         name: "Tailwind CSS",
         type: "Frontend",
     },
-    {
-        imageUrl: typescript,
-        name: "TypeScript",
-        type: "Frontend",
-    }
+ 
 ];
 
 export const experiences = [
     {
-        title: "React.js Developer",
-        company_name: "Starbucks",
-        icon: starbucks,
-        iconBg: "#accbe1",
-        date: "March 2020 - April 2021",
+        title: "Voulnteer Web Developer",
+        company_name: "Solaredition",
+        icon: Solaredition,
+        iconBg: "#E3E536",
+        date: "Oct 2020 - Jan 2024",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+            "Developed and implemented a comprehensive SEO strategy resulting in a 30% increase in organic traffic, generating over 20K monthly unique visitors.",
+            "Managed web development projects from initial scoping to final delivery, resulting in the successful launch of 1 WordPress Plugin and 2 Renewable energy Websites.",
             "Implementing responsive design and ensuring cross-browser compatibility.",
             "Participating in code reviews and providing constructive feedback to other developers.",
+            "Educated team members on the latest security protocols and best practices",
         ],
     },
     {
-        title: "React Native Developer",
-        company_name: "Tesla",
-        icon: tesla,
-        iconBg: "#fbc3bc",
-        date: "Jan 2021 - Feb 2022",
+        title: "Voulnteer PHP Developer",
+        company_name: "Windedition",
+        icon: Windedition,
+        iconBg: "#88BFC5",
+        date: "Oct 2020 - Jan 2024",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+            "Developed and implemented a comprehensive SEO strategy resulting in a 30% increase in organic traffic, generating over 20K monthly unique visitors.",
+            "Managed web development projects from initial scoping to final delivery, resulting in the successful launch of 1 WordPress Plugin and 2 Renewable energy Websites.",
             "Implementing responsive design and ensuring cross-browser compatibility.",
             "Participating in code reviews and providing constructive feedback to other developers.",
+            "Educated team members on the latest security protocols and best practices",
         ],
     },
-    {
-        title: "Web Developer",
-        company_name: "Shopify",
-        icon: shopify,
-        iconBg: "#b7e4c7",
-        date: "Jan 2022 - Jan 2023",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "Full stack Developer",
-        company_name: "Meta",
-        icon: meta,
-        iconBg: "#a2d2ff",
-        date: "Jan 2023 - Present",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
+   
+    
 ];
 
 export const socialLinks = [
@@ -173,56 +151,45 @@ export const socialLinks = [
     {
         name: 'GitHub',
         iconUrl: github,
-        link: 'https://github.com/YourGitHubUsername',
+        link: 'https://github.com/alireza1420',
     },
     {
         name: 'LinkedIn',
         iconUrl: linkedin,
-        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+        link: 'https://shorturl.at/bCJK8',
     }
 ];
 
 export const projects = [
     {
-        iconUrl: pricewise,
-        theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
+        iconUrl: summiz,
+        theme: 'btn-back-yellow',
+        name: 'AI Content Generator Plugin',
+        description: 'WordPress Web scraping plugin using PHP and JavaScript, integrating GPT-4 technology to automate content generation, resulting in a 50% reduction in manual content creation time .',
+        link: 'https://github.com/alireza1420',
     },
     {
         iconUrl: threads,
-        theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
+        theme: ' btn-back-green ',
+        name: 'PHP Framework Based on MVC',
+        description: 'Implemented core MVC components: Model, View, and Controller for separation of concerns AND Utilized object-oriented programming principles for better maintainability..',
+        link: 'https://github.com/alireza1420/Alireza_MVC_Framework',
     },
     {
         iconUrl: car,
         theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+        name: 'SimpliTweet',
+        description: 'SimpliTweet is a simplified version of Twitter designed to provide users with a streamlined social media experience focused on concise communication and community engagement. The platform offers a range of features inspired by Twitter but with a simplified user interface and limited functionality to promote ease of use and accessibility.        .',
+        link: 'https://github.com/alireza1420/SimpliTweet',
     },
     {
-        iconUrl: snapgram,
-        theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
+        iconUrl: pricewise,
+        theme: 'btn-back-red',
+        name: 'Amazon Price Tracker',
+        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
+        link: 'https://github.com/alireza1420/',
     },
-    {
-        iconUrl: estate,
-        theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
-    },
-    {
-        iconUrl: summiz,
-        theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
-    }
+    
+
+
 ];
