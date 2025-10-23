@@ -13,6 +13,7 @@
 Instead of scrolling through flat pages, visitors can explore a **3D island environment** — making your portfolio both technically impressive and memorable.
 
 Live version → [**alirezaportfolio.youimagineit.com**](https://alirezaportfolio.youimagineit.com/)
+<img width="989" height="578" alt="image" src="https://github.com/user-attachments/assets/700d6a34-66f6-4592-a446-053719698fe9" />
 
 ---
 
